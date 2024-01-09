@@ -1,0 +1,40 @@
+﻿<Window x:Class="A7BSWN.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A7BSWN"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Szabályok" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,16,0,0" Grid.Column="0"/>
+        <ListBox x:Name="ListBox2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Width="120" Height="300" 
+          />
+        <!--Upload new rules button-->
+        <Button Content="Szabályok feltöltése" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Click="Button_Click" Margin="0,83,0,0" Grid.Row="2"/>
+        <Button Content="Szó ellenőrzés" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Click="Button1_Click" Margin="0,125,0,0" Grid.RowSpan="2" Grid.Column="1"/>
+        <Label Content="Input szöveg" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Top" Margin="0,37,0,0" Grid.Column="1"/>
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Width="104"
+                 TextWrapping="Wrap" Text="{Binding Path=Input, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" Grid.Column="1"/>
+        <Label Content="Tett lépések" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Margin="0,46,0,0" Grid.Column="1"/>
+        <TextBox x:Name="TextBox2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Width="120" IsReadOnly="True"
+                 TextWrapping="Wrap" Text="{Binding Path=ListWhereTheSecondHalfOfTheInputIs, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" Margin="0,72,0,0" Grid.Column="1"/>
+        <Label Content="Teljes levezetés" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,16,0,0" Grid.Column="2"/>
+        <ListBox x:Name="ListBox1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Width="120" Height="300" 
+                  />
+
+
+
+
+    </Grid>
+</Window>
